@@ -1,6 +1,6 @@
 {
   "name": "pancake-contracts",
-  "version": "1.0.0",
+  "version": "1.22.19",
   "description": "Pancake contracts",
   "private": true,
   "workspaces": [

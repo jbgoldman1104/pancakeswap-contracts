@@ -9,7 +9,13 @@ import "dotenv/config";
 
 const bscTestnet: NetworkUserConfig = {
   url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-  chainId: 97,
+  chainId: 534351,
+  accounts: [process.env.KEY_TESTNET!],
+};
+
+const scrollTestnet: NetworkUserConfig = {
+  url: "https://sepolia-rpc.scroll.io",
+  chainId: 534351,
   accounts: [process.env.KEY_TESTNET!],
 };
 
@@ -23,7 +29,7 @@ const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   networks: {
     hardhat: {},
-    // testnet: bscTestnet,
+    testnet: scrollTestnet,
     // mainnet: bscMainnet,
   },
   solidity: {
