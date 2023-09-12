@@ -1,5 +1,6 @@
 import type { HardhatUserConfig, NetworkUserConfig } from "hardhat/types";
 import "@nomiclabs/hardhat-ethers";
+import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-web3";
 import "@nomiclabs/hardhat-truffle5";
 import "hardhat-abi-exporter";
@@ -27,6 +28,21 @@ const bscMainnet: NetworkUserConfig = {
 
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
+  etherscan: {
+    apiKey: {
+      ScrollTestnet: "Q2KW9VJ5TWJZM1HSUY1HTWKHHUT864HTV7",
+    },
+    customChains: [
+      {
+        network: "ScrollTestnet",
+        chainId: 534351,
+        urls: {
+          apiURL: "https://sepolia-blockscout.scroll.io/api",
+          browserURL: "https://sepolia-blockscout.scroll.io/",
+        },
+      },
+    ],
+  },
   networks: {
     hardhat: {},
     testnet: scrollTestnet,

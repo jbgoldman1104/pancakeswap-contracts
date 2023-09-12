@@ -9,11 +9,15 @@
     "deploy:testnet": "npx hardhat run --network testnet scripts/deploy.ts",
     "deploy:mainnet": "npx hardhat run --network mainnet scripts/deploy.ts",
     "test": "npx hardhat test",
+    "verify:testnet": "npx hardhat verify --network testnet 0x021e9692bE4Ca2BA2ecdB44CaA3DA54daEF3183e 0x8f4d17a90d24E72aaa5b1CD51652551f1572d0c1 0xfa6a407c4C49Ea1D46569c1A4Bcf71C3437bE54c",
     "test:coverage": "npx hardhat coverage",
     "test:size-contracts": "npx hardhat size-contracts"
   },
   "devDependencies": {
     "@openzeppelin/contracts": "^4.2.0",
     "@uniswap/lib": "4.0.1-alpha"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-etherscan": "^3.1.7"
   }
 }

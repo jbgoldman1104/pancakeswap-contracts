@@ -14,7 +14,7 @@ const main = async () => {
   // console.log("PancakeFactory:", PancakeFactory.address);
 
   const PancakeRouterContract = await ethers.getContractFactory("PancakeRouter");
-  const PancakeRouter = await PancakeRouterContract.deploy("0x8f4d17a90d24E72aaa5b1CD51652551f1572d0c1", "0x5300000000000000000000000000000000000004");
+  const PancakeRouter = await PancakeRouterContract.deploy("0x8f4d17a90d24E72aaa5b1CD51652551f1572d0c1", "0xfa6a407c4C49Ea1D46569c1A4Bcf71C3437bE54c");
   await PancakeRouter.deployed();
   console.log("PancakeRouter:", PancakeRouter.address);
 
