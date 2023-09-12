@@ -12,7 +12,6 @@
   "scripts": {
     "format:check": "prettier --check 'projects/**/*.{js,ts,sol}'",
     "format:write": "prettier --write 'projects/**/*.{js,ts,sol}'",
-    "prepare": "husky install",
     "test": "lerna run test"
   },
   "devDependencies": {
