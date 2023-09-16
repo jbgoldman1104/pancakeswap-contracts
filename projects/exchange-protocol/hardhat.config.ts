@@ -8,9 +8,9 @@ import "hardhat-contract-sizer";
 import "solidity-coverage";
 import "dotenv/config";
 
-const bscTestnet: NetworkUserConfig = {
-  url: "https://data-seed-prebsc-1-s1.binance.org:8545/",
-  chainId: 534351,
+const zksyncTestnet: NetworkUserConfig = {
+  url: "https://testnet.era.zksync.dev",
+  chainId: 280,
   accounts: [process.env.KEY_TESTNET!],
 };
 
@@ -31,6 +31,7 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: {
       ScrollTestnet: "Q2KW9VJ5TWJZM1HSUY1HTWKHHUT864HTV7",
+      ZksyncTestnet: "Q2KW9VJ5TWJZM1HSUY1HTWKHHUT864HTV7",
     },
     customChains: [
       {
@@ -41,11 +42,20 @@ const config: HardhatUserConfig = {
           browserURL: "https://sepolia-blockscout.scroll.io/",
         },
       },
+      {
+        network: "ZksyncTestnet",
+        chainId: 280,
+        urls: {
+          apiURL: "https://zksync2-testnet.zkscan.io/api",
+          browserURL: "https://zksync2-testnet.zkscan.io/",
+        },
+      },
     ],
   },
   networks: {
     hardhat: {},
-    testnet: scrollTestnet,
+    scrolltestnet: scrollTestnet,
+    zksynctestnet: zksyncTestnet,
     // mainnet: bscMainnet,
   },
   solidity: {
