@@ -7,17 +7,22 @@ import "hardhat-abi-exporter";
 import "hardhat-contract-sizer";
 import "solidity-coverage";
 import "dotenv/config";
+import "@matterlabs/hardhat-zksync-deploy";
+import "@matterlabs/hardhat-zksync-solc";
 
 const zksyncTestnet: NetworkUserConfig = {
   url: "https://testnet.era.zksync.dev",
   chainId: 280,
   accounts: [process.env.KEY_TESTNET!],
+  ethNetwork: "goerli", // or a Goerli RPC endpoint from Infura/Alchemy/Chainstack etc.
+  zksync: true,
 };
 
 const scrollTestnet: NetworkUserConfig = {
   url: "https://sepolia-rpc.scroll.io",
   chainId: 534351,
   accounts: [process.env.KEY_TESTNET!],
+  zksync: false,
 };
 
 const bscMainnet: NetworkUserConfig = {

@@ -7,7 +7,7 @@
   "scripts": {
     "compile": "npx hardhat compile",
     "deploy:scrolltestnet": "npx hardhat run --network scrolltestnet scripts/deploy.ts",
-    "deploy:zksynctestnet": "npx hardhat run --network zksynctestnet scripts/deploy.ts",
+    "deploy:zksynctestnet": "npx hardhat deploy-zksync --network zksynctestnet --script deploy-zk.ts",
     "test": "npx hardhat test",
     "verify:scrolltestnet": "npx hardhat verify --network scrolltestnet 0x021e9692bE4Ca2BA2ecdB44CaA3DA54daEF3183e 0x8f4d17a90d24E72aaa5b1CD51652551f1572d0c1 0xfa6a407c4C49Ea1D46569c1A4Bcf71C3437bE54c",
     "verify:zksynctestnet": "npx hardhat verify --network zksynctestnet 0x021e9692bE4Ca2BA2ecdB44CaA3DA54daEF3183e 0x8f4d17a90d24E72aaa5b1CD51652551f1572d0c1 0xfa6a407c4C49Ea1D46569c1A4Bcf71C3437bE54c",
@@ -19,6 +19,9 @@
     "@uniswap/lib": "4.0.1-alpha"
   },
   "dependencies": {
+    "@matterlabs/hardhat-zksync-deploy": "^0.6.5",
+    "@matterlabs/hardhat-zksync-solc": "^0.4.2",
+    "@matterlabs/hardhat-zksync-verify": "^0.2.0",
     "@nomiclabs/hardhat-etherscan": "^3.1.7"
   }
 }
