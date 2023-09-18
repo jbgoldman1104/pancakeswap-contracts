@@ -15,14 +15,14 @@ export default async function (hre: HardhatRuntimeEnvironment) {
   const deployer = new Deployer(hre, wallet);
   // Load contract
   const PancakeFactory = await deployer.loadArtifact("PancakeFactory");
-  const PancakeFactoryContract = await deployer.deploy(PancakeFactory, ["0x0B79607841C18280623492442E8BEB47526Ba897"]);
+  const PancakeFactoryContract = await deployer.deploy(PancakeFactory, [process.env.ADDR_TESTNET]);
 
   // Show the contract info.
   console.log("PancakeFactory:", PancakeFactoryContract.address);
 
 
   const PancakeRouter = await deployer.loadArtifact("PancakeRouter");
-  const PancakeRouterContract = await deployer.deploy(PancakeRouter, [PancakeFactoryContract.address, "0x20b28B1e4665FFf290650586ad76E977EAb90c5D"]);
+  const PancakeRouterContract = await deployer.deploy(PancakeRouter, [PancakeFactoryContract.address, process.env.WETH_ADDR]);
 
   // Show the contract info.
   console.log("PancakeRouter:", PancakeRouterContract.address);

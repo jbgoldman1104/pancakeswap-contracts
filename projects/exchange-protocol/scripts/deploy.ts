@@ -8,13 +8,13 @@ const main = async () => {
 
   console.log("Deploying to network:", network);
 
-  // const PancakeFactoryContract = await ethers.getContractFactory("PancakeFactory");
-  // const PancakeFactory = await PancakeFactoryContract.deploy("0x0B79607841C18280623492442E8BEB47526Ba897");
-  // await PancakeFactory.deployed();
-  // console.log("PancakeFactory:", PancakeFactory.address);
+  const PancakeFactoryContract = await ethers.getContractFactory("PancakeFactory");
+  const PancakeFactory = await PancakeFactoryContract.deploy(process.env.ADDR_TESTNET);
+  await PancakeFactory.deployed();
+  console.log("PancakeFactory:", PancakeFactory.address);
 
   const PancakeRouterContract = await ethers.getContractFactory("PancakeRouter");
-  const PancakeRouter = await PancakeRouterContract.deploy("0x8f4d17a90d24E72aaa5b1CD51652551f1572d0c1", "0xfa6a407c4C49Ea1D46569c1A4Bcf71C3437bE54c");
+  const PancakeRouter = await PancakeRouterContract.deploy(PancakeFactory.address, process.env.WETH_ADDR);
   await PancakeRouter.deployed();
   console.log("PancakeRouter:", PancakeRouter.address);
 

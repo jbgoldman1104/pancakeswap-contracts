@@ -23,6 +23,8 @@ yarn-error.log*
 # artifacts/cache/data
 artifacts
 cache
+artifacts-zk
+cache-zk
 
 coverage.json
 

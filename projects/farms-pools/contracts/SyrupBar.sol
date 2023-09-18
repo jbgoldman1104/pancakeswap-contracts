@@ -5,7 +5,7 @@ import "bsc-library/contracts/BEP20.sol";
 import "./CakeToken.sol";
 
 // SyrupBar with Governance.
-contract SyrupBar is BEP20("SyrupBar Token", "SYRUP") {
+contract SyrupBar is BEP20("ZProtocol SyrupBar Token", "ZST") {
     /// @dev Creates `_amount` token to `_to`. Must only be called by the owner (MasterChef).
     function mint(address _to, uint256 _amount) public onlyOwner {
         _mint(_to, _amount);
