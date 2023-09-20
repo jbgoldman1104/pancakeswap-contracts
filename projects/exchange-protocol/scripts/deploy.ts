@@ -14,7 +14,7 @@ const main = async () => {
   console.log("PancakeFactory:", PancakeFactory.address);
 
   const PancakeRouterContract = await ethers.getContractFactory("PancakeRouter");
-  const PancakeRouter = await PancakeRouterContract.deploy(PancakeFactory.address, process.env.WETH_ADDR);
+  const PancakeRouter = await PancakeRouterContract.deploy(PancakeFactory.address, process.env.WETH_SCROLL_TESTNET_ADDR);
   await PancakeRouter.deployed();
   console.log("PancakeRouter:", PancakeRouter.address);
 

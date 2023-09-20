@@ -22,7 +22,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 
 
   const PancakeRouter = await deployer.loadArtifact("PancakeRouter");
-  const PancakeRouterContract = await deployer.deploy(PancakeRouter, [PancakeFactoryContract.address, process.env.WETH_ADDR]);
+  const PancakeRouterContract = await deployer.deploy(PancakeRouter, [PancakeFactoryContract.address, process.env.WETH_ZKSYNC_TESTNET_ADDR]);
 
   // Show the contract info.
   console.log("PancakeRouter:", PancakeRouterContract.address);
