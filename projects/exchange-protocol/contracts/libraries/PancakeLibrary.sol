@@ -4,6 +4,7 @@ pragma solidity >=0.5.0;
 import "./SafeMath.sol";
 import "../interfaces/IPancakeFactory.sol";
 import "../interfaces/IPancakePair.sol";
+// import "./IZKHarvestFactory.sol";
 
 library PancakeLibrary {
     using SafeMath for uint256;
@@ -20,20 +21,24 @@ library PancakeLibrary {
         address factory,
         address tokenA,
         address tokenB
-    ) internal pure returns (address pair) {
-        (address token0, address token1) = sortTokens(tokenA, tokenB);
-        pair = address(
-            uint256(
-                keccak256(
-                    abi.encodePacked(
-                        hex"ff",
-                        factory,
-                        keccak256(abi.encodePacked(token0, token1)),
-                        hex"a5934690703a592a07e841ca29d5e5c79b5e22ed4749057bb216dc31100be1c0" // init code hash
-                    )
-                )
-            )
-        );
+    ) internal view  returns (address pair) {
+        // (address token0, address token1) = sortTokens(tokenA, tokenB);
+        // pair = address(
+        //     uint256(
+        //         keccak256(
+        //             abi.encodePacked(
+        //                 hex"ff",
+        //                 factory,
+        //                 keccak256(abi.encodePacked(token0, token1)),
+        //                 // hex"a5934690703a592a07e841ca29d5e5c79b5e22ed4749057bb216dc31100be1c0" // init code hash for scroll
+        //                 hex"ceafc2cb2d29cd60d98d15d920cef27c8e99ec7fc9abc76878186e3b7db6549f" // zksync testnet
+
+        //             )
+        //         )
+        //     )
+        // );
+        
+        pair = IPancakeFactory(factory).getPair(tokenA, tokenB);
     }
 
     // fetches and sorts the reserves for a pair

@@ -11,7 +11,7 @@
     "deploy:zksynctestnet": "npx hardhat deploy-zksync --network zksynctestnet --script deploy-zk.ts",
     "test": "npx hardhat test",
     "verify:scrolltestnet": "npx hardhat verify --network scrolltestnet 0x021e9692bE4Ca2BA2ecdB44CaA3DA54daEF3183e 0x8f4d17a90d24E72aaa5b1CD51652551f1572d0c1 0xfa6a407c4C49Ea1D46569c1A4Bcf71C3437bE54c",
-    "verify:zksynctestnet": "npx hardhat verify --network zksynctestnet 0x021e9692bE4Ca2BA2ecdB44CaA3DA54daEF3183e 0x8f4d17a90d24E72aaa5b1CD51652551f1572d0c1 0xfa6a407c4C49Ea1D46569c1A4Bcf71C3437bE54c",
+    "verify:zksynctestnet": "npx hardhat verify --network zksynctestnet 0x67d18e6Ce2f53C3eAeAeDB722FBEE70d92b453Cc 0xb759D079984eFB28B0337a46F9aaFa70809dF0Da 0x8C3e3f2983DB650727F3e05B7a7773e4D641537B",
     "test:coverage": "npx hardhat coverage",
     "test:size-contracts": "npx hardhat size-contracts"
   },

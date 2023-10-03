@@ -1,14 +1,15 @@
 import type { HardhatUserConfig, NetworkUserConfig } from "hardhat/types";
 import "@nomiclabs/hardhat-ethers";
-import "@nomiclabs/hardhat-etherscan";
+// import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-web3";
-import "@nomiclabs/hardhat-truffle5";
+// import "@nomiclabs/hardhat-truffle5";
 import "hardhat-abi-exporter";
 import "hardhat-contract-sizer";
 import "solidity-coverage";
 import "dotenv/config";
 import "@matterlabs/hardhat-zksync-deploy";
 import "@matterlabs/hardhat-zksync-solc";
+import "@matterlabs/hardhat-zksync-verify";
 
 const zksyncTestnet: NetworkUserConfig = {
   url: "https://testnet.era.zksync.dev",
@@ -16,6 +17,7 @@ const zksyncTestnet: NetworkUserConfig = {
   accounts: [process.env.KEY_TESTNET!],
   ethNetwork: "goerli", // or a Goerli RPC endpoint from Infura/Alchemy/Chainstack etc.
   zksync: true,
+  verifyURL: 'https://zksync2-testnet-explorer.zksync.dev/contract_verification',
 };
 
 const scrollTestnet: NetworkUserConfig = {
@@ -36,7 +38,7 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: {
       ScrollTestnet: "Q2KW9VJ5TWJZM1HSUY1HTWKHHUT864HTV7",
-      ZksyncTestnet: "Q2KW9VJ5TWJZM1HSUY1HTWKHHUT864HTV7",
+      ZksyncTestnet: "1W6UJJX43G2I3RJBG35D4H7ENA8AC3JAZ2",
     },
     customChains: [
       {

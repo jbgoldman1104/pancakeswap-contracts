@@ -35,7 +35,7 @@ const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
   etherscan: {
     apiKey: {
-      ScrollTestnet: "Q2KW9VJ5TWJZM1HSUY1HTWKHHUT864HTV7",
+      ScrollTestnet: "Y44ITGUDCEFWBC32Q69M5JKTMRT56Z9W7S",
       ZksyncTestnet: "Q2KW9VJ5TWJZM1HSUY1HTWKHHUT864HTV7",
     },
     customChains: [
@@ -45,6 +45,8 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://sepolia-blockscout.scroll.io/api",
           browserURL: "https://sepolia-blockscout.scroll.io/",
+          // apiURL: "https://api-sepolia.scrollscan.dev/api",
+          // browserURL: "https://sepolia.scrollscan.dev/",
         },
       },
       {
